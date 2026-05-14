@@ -1,0 +1,1459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Acta Leads — Outbound Prospecting for Marketing Agencies</title>
+<meta name="description" content="Acta Leads finds new clients for marketing agencies. We prospect local businesses — trades, construction, hospitality and more — on your behalf. You pay per attended meeting.">
+<meta name="keywords" content="outbound prospecting marketing agencies, lead generation for marketing agencies, appointment setting agencies, find clients for marketing agency, B2B prospecting Australia, SEO agency lead generation, new clients for digital agency">
+<meta name="robots" content="index, follow">
+<meta name="author" content="Acta Leads">
+<link rel="canonical" href="https://actaleads.com.au">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Acta Leads — We Find Your Agency's Next Client">
+<meta property="og:description" content="We prospect local businesses on behalf of marketing agencies. You pay per attended meeting — not per lead, not per call.">
+<meta property="og:url" content="https://actaleads.com.au">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Acta Leads",
+  "description": "Outbound prospecting service for marketing agencies. We find and book meetings with local businesses — trades, construction, hospitality and more — so agencies always have a pipeline of new clients to work with.",
+  "email": "acta.leads@gmail.com",
+  "url": "https://actaleads.com.au",
+  "serviceType": ["Outbound Prospecting", "Appointment Setting", "Lead Generation for Marketing Agencies"],
+  "areaServed": "Australia"
+}
+</script>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#f5f2ec;
+  --black:#0d0d0d;
+  --ink:#1a1a1a;
+  --mid:#79746a;
+  --light:#ece8e0;
+  --accent:#d43a1f;
+  --accent-dark:#b02f18;
+  --border:#e0dbd2;
+  --card:#fff;
+  --radius:14px;
+  --sidebar:320px;
+  --nav-h:64px;
+}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:'DM Sans',sans-serif;font-weight:400;line-height:1.6;overflow-x:hidden}
+body.sidebar-open{overflow:hidden}
+
+/* ── NAV ── */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:300;
+  height:var(--nav-h);
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 3rem;
+  background:rgba(245,242,236,0.96);
+  backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--border);
+  transition:box-shadow 0.3s;
+}
+nav.scrolled{box-shadow:0 2px 20px rgba(0,0,0,0.06)}
+.logo{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:1.65rem;letter-spacing:0.07em;
+  color:var(--black);text-decoration:none;
+  display:flex;align-items:baseline;gap:4px;
+  cursor:pointer;
+}
+.logo-dot{
+  width:6px;height:6px;background:var(--accent);
+  border-radius:50%;flex-shrink:0;margin-bottom:-1px;
+}
+.nav-right{display:flex;align-items:center;gap:1.5rem}
+.nav-enquire{
+  background:var(--accent);color:#fff;
+  padding:0.55rem 1.3rem;border-radius:100px;
+  font-size:0.8rem;font-weight:600;
+  border:none;cursor:pointer;font-family:'DM Sans',sans-serif;
+  transition:background 0.2s,transform 0.15s;
+  letter-spacing:0.02em;
+}
+.nav-enquire:hover{background:var(--accent-dark);transform:translateY(-1px)}
+.burger{
+  width:40px;height:40px;border-radius:8px;
+  background:transparent;border:1.5px solid var(--border);
+  cursor:pointer;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;gap:5px;
+  transition:border-color 0.2s,background 0.2s;
+}
+.burger:hover{border-color:var(--ink);background:var(--light)}
+.burger span{
+  display:block;width:18px;height:1.5px;
+  background:var(--ink);border-radius:2px;
+  transition:transform 0.3s,opacity 0.3s,width 0.3s;
+  transform-origin:center;
+}
+.burger.active span:nth-child(1){transform:translateY(6.5px) rotate(45deg)}
+.burger.active span:nth-child(2){opacity:0;width:0}
+.burger.active span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
+
+/* ── SIDEBAR ── */
+.sidebar-overlay{
+  position:fixed;inset:0;z-index:400;
+  background:rgba(13,13,13,0.5);
+  opacity:0;pointer-events:none;
+  transition:opacity 0.35s;
+  backdrop-filter:blur(3px);
+}
+.sidebar-overlay.active{opacity:1;pointer-events:all}
+.sidebar{
+  position:fixed;top:0;right:0;bottom:0;z-index:500;
+  width:var(--sidebar);
+  background:var(--black);
+  transform:translateX(100%);
+  transition:transform 0.4s cubic-bezier(0.4,0,0.2,1);
+  display:flex;flex-direction:column;
+  overflow-y:auto;
+}
+.sidebar.active{transform:translateX(0)}
+.sidebar-top{
+  padding:1.5rem 2rem;
+  display:flex;align-items:center;justify-content:space-between;
+  border-bottom:1px solid rgba(255,255,255,0.07);
+}
+.sidebar-logo{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:1.4rem;letter-spacing:0.07em;color:#fff;
+  display:flex;align-items:baseline;gap:3px;
+}
+.sidebar-logo-dot{width:5px;height:5px;background:var(--accent);border-radius:50%;margin-bottom:-1px}
+.sidebar-close{
+  width:32px;height:32px;border-radius:6px;
+  background:rgba(255,255,255,0.06);border:none;
+  color:rgba(255,255,255,0.5);font-size:1rem;
+  cursor:pointer;display:flex;align-items:center;justify-content:center;
+  transition:background 0.2s,color 0.2s;
+}
+.sidebar-close:hover{background:rgba(255,255,255,0.12);color:#fff}
+.sidebar-nav{padding:2rem 0;flex:1}
+.sidebar-link{
+  display:block;padding:1rem 2rem;
+  font-size:0.9rem;font-weight:500;color:rgba(255,255,255,0.45);
+  text-decoration:none;cursor:pointer;
+  border-left:2px solid transparent;
+  transition:color 0.2s,border-color 0.2s,background 0.2s,padding-left 0.2s;
+  letter-spacing:0.02em;
+}
+.sidebar-link:hover,.sidebar-link.active{
+  color:#fff;
+  border-left-color:var(--accent);
+  background:rgba(255,255,255,0.03);
+  padding-left:2.5rem;
+}
+.sidebar-section-label{
+  font-size:0.62rem;font-weight:700;letter-spacing:0.16em;
+  text-transform:uppercase;color:rgba(255,255,255,0.18);
+  padding:0.5rem 2rem 0.3rem;margin-top:1rem;
+}
+.sidebar-bottom{
+  padding:2rem;
+  border-top:1px solid rgba(255,255,255,0.07);
+}
+.sidebar-cta{
+  display:block;width:100%;text-align:center;
+  padding:0.85rem;background:var(--accent);color:#fff;
+  border:none;border-radius:100px;font-size:0.875rem;
+  font-weight:600;cursor:pointer;font-family:'DM Sans',sans-serif;
+  transition:background 0.2s;letter-spacing:0.02em;
+}
+.sidebar-cta:hover{background:var(--accent-dark)}
+.sidebar-email{
+  text-align:center;margin-top:1rem;
+  font-size:0.75rem;color:rgba(255,255,255,0.22);
+}
+.sidebar-email a{color:rgba(255,255,255,0.4);text-decoration:none}
+.sidebar-email a:hover{color:#fff}
+
+/* ── PAGES ── */
+.page{display:none}
+.page.active{display:block}
+
+/* ── SHARED ── */
+.eyebrow{
+  font-size:0.68rem;font-weight:700;letter-spacing:0.18em;
+  text-transform:uppercase;color:var(--accent);
+  margin-bottom:1.2rem;
+  display:flex;align-items:center;gap:0.75rem;
+}
+.eyebrow::before{content:'';width:18px;height:1.5px;background:var(--accent)}
+.sh{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:clamp(2.2rem,4.5vw,4rem);
+  line-height:0.95;letter-spacing:0.02em;color:var(--black);
+}
+.sh .red{color:var(--accent)}
+.sh .it{font-family:'DM Serif Display',serif;font-style:italic;letter-spacing:0}
+.btn{
+  padding:0.85rem 1.8rem;border-radius:100px;
+  font-size:0.875rem;font-weight:600;
+  text-decoration:none;transition:all 0.2s;
+  cursor:pointer;border:none;font-family:'DM Sans',sans-serif;
+  letter-spacing:0.02em;display:inline-flex;align-items:center;gap:0.5rem;
+}
+.btn-red{background:var(--accent);color:#fff}
+.btn-red:hover{background:var(--accent-dark);transform:translateY(-1px)}
+.btn-ghost{background:transparent;color:var(--ink);border:1.5px solid var(--border)}
+.btn-ghost:hover{border-color:var(--ink)}
+
+/* ── HERO ── */
+.hero{
+  min-height:100vh;padding-top:var(--nav-h);
+  display:grid;grid-template-columns:1.1fr 0.9fr;
+  border-bottom:1px solid var(--border);
+}
+.hero-l{
+  padding:6rem 3rem 5rem;
+  display:flex;flex-direction:column;justify-content:center;
+  border-right:1px solid var(--border);
+}
+.hero h1{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:clamp(4rem,8.5vw,8.5rem);
+  line-height:0.88;letter-spacing:0.02em;
+  color:var(--black);margin-bottom:2rem;
+}
+.hero h1 .ghost{-webkit-text-stroke:2.5px var(--black);color:transparent}
+.hero h1 .red{color:var(--accent)}
+.hero-copy{
+  font-size:1rem;color:var(--mid);
+  max-width:480px;line-height:1.85;
+  margin-bottom:2.5rem;font-weight:300;
+}
+.hero-copy strong{color:var(--ink);font-weight:500}
+.hero-btns{display:flex;gap:1rem;flex-wrap:wrap}
+.hero-r{
+  background:var(--black);
+  padding:6rem 2.5rem 5rem;
+  display:flex;flex-direction:column;justify-content:center;
+  position:relative;overflow:hidden;
+}
+.hero-r::before{
+  content:'';position:absolute;
+  top:-100px;right:-100px;
+  width:360px;height:360px;
+  background:radial-gradient(circle,rgba(212,58,31,0.09) 0%,transparent 70%);
+  pointer-events:none;
+}
+.hr-label{
+  font-size:0.62rem;letter-spacing:0.15em;text-transform:uppercase;
+  color:rgba(255,255,255,0.2);margin-bottom:1.8rem;
+}
+.deal{
+  padding:1.8rem 0;
+  border-bottom:1px solid rgba(255,255,255,0.06);
+}
+.deal:last-of-type{border-bottom:none}
+.deal-mark{
+  width:28px;height:2px;background:var(--accent);margin-bottom:1rem;
+}
+.deal h3{font-size:0.95rem;font-weight:600;color:#fff;margin-bottom:0.35rem}
+.deal p{font-size:0.8rem;color:rgba(255,255,255,0.35);line-height:1.7}
+.live{
+  display:inline-flex;align-items:center;gap:0.6rem;
+  background:rgba(212,58,31,0.08);
+  border:1px solid rgba(212,58,31,0.18);
+  color:var(--accent);padding:0.45rem 1rem;
+  border-radius:100px;font-size:0.68rem;
+  font-weight:600;margin-top:2rem;letter-spacing:0.04em;
+}
+.live::before{
+  content:'';width:5px;height:5px;
+  background:var(--accent);border-radius:50%;
+  animation:pulse 1.8s infinite;
+}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:0.2}}
+
+/* ── TICKER ── */
+.ticker{
+  background:var(--accent);
+  padding:0.72rem 0;overflow:hidden;white-space:nowrap;
+}
+.tick-track{display:inline-flex;animation:roll 38s linear infinite}
+.tick-track span{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:0.82rem;letter-spacing:0.14em;
+  color:rgba(255,255,255,0.82);padding:0 1.5rem;
+}
+.tick-track .sep{color:rgba(255,255,255,0.3);padding:0 0.2rem}
+@keyframes roll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* ── STATEMENT ── */
+.statement{
+  padding:7rem 3rem;
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:8rem;align-items:center;
+  border-bottom:1px solid var(--border);
+}
+.stmt-r p{
+  font-size:0.97rem;color:var(--mid);
+  line-height:1.9;margin-bottom:1.1rem;font-weight:300;
+}
+.stmt-r p strong{color:var(--ink);font-weight:500}
+.pull{
+  font-family:'DM Serif Display',serif;
+  font-style:italic;font-size:1.2rem;color:var(--ink);
+  border-left:3px solid var(--accent);
+  padding-left:1.3rem;margin:2rem 0;line-height:1.55;
+}
+
+/* ── WHO WE HELP ── */
+.help{padding:6rem 3rem;border-bottom:1px solid var(--border)}
+.help-top{
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:5rem;align-items:end;margin-bottom:3.5rem;
+}
+.help-top-r{
+  font-size:0.95rem;color:var(--mid);
+  line-height:1.82;font-weight:300;
+}
+.help-top-r strong{color:var(--ink);font-weight:500}
+.help-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:1px;background:var(--border);
+  border:1px solid var(--border);
+  border-radius:var(--radius);overflow:hidden;
+}
+.hc{
+  background:var(--bg);padding:2.2rem;
+  transition:background 0.28s;
+  position:relative;overflow:hidden;
+}
+.hc::after{
+  content:'';position:absolute;
+  bottom:0;left:0;right:0;height:2px;
+  background:transparent;transition:background 0.28s;
+}
+.hc:hover{background:var(--card)}
+.hc:hover::after{background:var(--accent)}
+.hc.dark{background:var(--black)}
+.hc.dark:hover{background:#111}
+.hc.dark h3{color:#fff}
+.hc.dark p{color:rgba(255,255,255,0.38)}
+.hc-tag{
+  font-size:0.6rem;font-weight:700;letter-spacing:0.1em;
+  text-transform:uppercase;background:var(--accent);color:#fff;
+  padding:0.18rem 0.55rem;border-radius:100px;
+  display:inline-block;margin-bottom:0.9rem;
+}
+.hc h3{font-weight:600;font-size:0.95rem;color:var(--ink);margin-bottom:0.5rem}
+.hc p{font-size:0.82rem;color:var(--mid);line-height:1.72}
+.hc-chips{display:flex;flex-wrap:wrap;gap:0.35rem;margin-top:1.1rem}
+.chip{
+  background:var(--light);border:1px solid var(--border);
+  color:var(--mid);padding:0.2rem 0.65rem;
+  border-radius:100px;font-size:0.7rem;font-weight:500;
+}
+.hc.dark .chip{
+  background:rgba(255,255,255,0.06);
+  border-color:rgba(255,255,255,0.1);
+  color:rgba(255,255,255,0.38);
+}
+.help-note{
+  margin-top:2.5rem;padding:1.5rem 2rem;
+  background:var(--light);border-radius:var(--radius);
+  border:1px solid var(--border);
+  display:flex;align-items:center;justify-content:space-between;
+  gap:2rem;flex-wrap:wrap;
+}
+.help-note p{font-size:0.875rem;color:var(--mid);line-height:1.6}
+.help-note strong{color:var(--ink)}
+.help-note a{color:var(--accent);font-weight:600;text-decoration:none;cursor:pointer}
+
+/* ── HOW ── */
+.how{
+  padding:6rem 3rem;
+  background:var(--black);color:#fff;
+  border-bottom:1px solid #1a1a1a;
+}
+.how .eyebrow{color:rgba(255,255,255,0.28)}
+.how .eyebrow::before{background:rgba(255,255,255,0.28)}
+.how .sh{color:#fff}
+.how-layout{
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:5rem;margin-top:4.5rem;align-items:start;
+}
+.step{
+  display:grid;grid-template-columns:2.5rem 1fr;
+  gap:1.2rem;padding:1.8rem 0;
+  border-bottom:1px solid rgba(255,255,255,0.06);
+  align-items:start;
+}
+.step:last-child{border-bottom:none;padding-bottom:0}
+.step-n{
+  font-family:'Bebas Neue',sans-serif;font-size:0.95rem;
+  color:var(--accent);letter-spacing:0.08em;padding-top:3px;
+}
+.step h3{font-weight:600;font-size:0.92rem;color:#fff;margin-bottom:0.45rem}
+.step p{font-size:0.82rem;color:rgba(255,255,255,0.36);line-height:1.75}
+.how-r{}
+.q-card{
+  background:#141414;border:1px solid rgba(255,255,255,0.07);
+  border-radius:var(--radius);padding:1.8rem;margin-bottom:0.9rem;
+}
+.q-card:last-of-type{margin-bottom:0}
+.q-lbl{
+  font-size:0.6rem;font-weight:700;letter-spacing:0.12em;
+  text-transform:uppercase;color:var(--accent);margin-bottom:0.6rem;
+}
+.q-card h4{font-weight:600;font-size:0.88rem;color:#fff;margin-bottom:0.4rem}
+.q-card p{font-size:0.8rem;color:rgba(255,255,255,0.33);line-height:1.65}
+.diff{
+  background:rgba(212,58,31,0.07);
+  border:1px solid rgba(212,58,31,0.16);
+  border-radius:var(--radius);padding:1.8rem;margin-top:0.9rem;
+}
+.diff-lbl{
+  font-size:0.6rem;font-weight:700;letter-spacing:0.12em;
+  text-transform:uppercase;color:var(--accent);margin-bottom:0.9rem;
+}
+.diff-row{
+  display:flex;gap:1rem;align-items:flex-start;
+  padding:0.55rem 0;border-bottom:1px solid rgba(255,255,255,0.05);
+}
+.diff-row:last-child{border-bottom:none;padding-bottom:0}
+.diff-mk{
+  font-size:0.75rem;font-weight:600;
+  flex-shrink:0;margin-top:1px;
+  width:16px;text-align:center;
+}
+.diff-mk.yes{color:var(--accent)}
+.diff-mk.no{color:rgba(255,255,255,0.18)}
+.diff-row p{font-size:0.8rem;color:rgba(255,255,255,0.45);line-height:1.6}
+.diff-row p strong{color:#fff;font-weight:500}
+
+/* ── PACKAGES ── */
+.packages{padding:6rem 3rem;border-bottom:1px solid var(--border)}
+.pkg-intro{
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:5rem;align-items:end;margin-bottom:4rem;
+}
+.pkg-intro-r p{
+  font-size:0.95rem;color:var(--mid);
+  line-height:1.82;font-weight:300;margin-bottom:0.75rem;
+}
+.pkg-intro-r strong{color:var(--ink);font-weight:500}
+.pkg-row-label{
+  font-size:0.68rem;font-weight:700;letter-spacing:0.12em;
+  text-transform:uppercase;color:var(--mid);
+  margin-bottom:1.2rem;
+  display:flex;align-items:center;gap:1rem;
+}
+.pkg-row-label::after{
+  content:'';flex:1;height:1px;
+  background:var(--border);display:inline-block;
+}
+.pkg-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:1.5rem;margin-bottom:4rem;
+}
+.pk{
+  background:var(--card);border:1.5px solid var(--border);
+  border-radius:var(--radius);padding:2.2rem;
+  position:relative;overflow:hidden;
+  transition:transform 0.3s,box-shadow 0.3s,border-color 0.3s;
+}
+.pk::after{
+  content:'';position:absolute;
+  bottom:0;left:0;right:0;height:3px;
+  background:transparent;transition:background 0.3s;
+}
+.pk:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(0,0,0,0.08)}
+.pk:hover::after,.pk.feat::after{background:var(--accent)}
+.pk.feat{background:var(--black);border-color:var(--black)}
+.pk-tier{
+  font-size:0.62rem;font-weight:700;letter-spacing:0.12em;
+  text-transform:uppercase;color:var(--mid);margin-bottom:0.8rem;
+}
+.pk.feat .pk-tier{color:rgba(255,255,255,0.25)}
+.pk-n{
+  font-family:'Bebas Neue',sans-serif;font-size:3.8rem;
+  line-height:1;letter-spacing:0.02em;color:var(--black);margin-bottom:0.2rem;
+}
+.pk.feat .pk-n{color:var(--accent)}
+.pk-n sub{
+  font-family:'DM Sans',sans-serif;font-size:0.88rem;
+  font-weight:400;color:var(--mid);letter-spacing:0;
+  vertical-align:middle;margin-left:0.2rem;
+}
+.pk.feat .pk-n sub{color:rgba(255,255,255,0.25)}
+.pk-desc{font-size:0.82rem;color:var(--mid);line-height:1.6;margin-bottom:1.5rem}
+.pk.feat .pk-desc{color:rgba(255,255,255,0.35)}
+.pk-div{height:1px;background:var(--border);margin-bottom:1.2rem}
+.pk.feat .pk-div{background:rgba(255,255,255,0.07)}
+.pk-list{list-style:none;margin-bottom:1.8rem}
+.pk-list li{
+  font-size:0.82rem;padding:0.32rem 0;color:var(--ink);
+  display:flex;align-items:flex-start;gap:0.65rem;line-height:1.5;
+}
+.pk.feat .pk-list li{color:rgba(255,255,255,0.58)}
+.pk-list li::before{
+  content:'';width:14px;height:14px;border-radius:50%;
+  flex-shrink:0;margin-top:2px;
+  border:1.5px solid var(--accent);
+  background:rgba(212,58,31,0.08);
+}
+.pk-enquire{
+  background:var(--bg);border:1.5px dashed var(--border);
+  border-radius:10px;padding:1rem;text-align:center;
+  margin-bottom:1.1rem;cursor:pointer;transition:all 0.2s;
+}
+.pk.feat .pk-enquire{background:#161616;border-color:rgba(255,255,255,0.08)}
+.pk-enquire:hover{border-color:var(--accent);background:rgba(212,58,31,0.04)}
+.pk-enquire p{font-size:0.75rem;color:var(--mid);font-weight:500}
+.pk.feat .pk-enquire p{color:rgba(255,255,255,0.28)}
+.pk-enquire span{font-size:0.68rem;color:var(--accent);font-weight:600}
+.pkbtn{
+  display:block;width:100%;text-align:center;
+  padding:0.8rem;border-radius:100px;
+  font-size:0.82rem;font-weight:600;cursor:pointer;
+  border:none;font-family:'DM Sans',sans-serif;transition:all 0.2s;
+}
+.pb-dark{background:var(--black);color:#fff}
+.pb-dark:hover{background:var(--accent)}
+.pb-red{background:var(--accent);color:#fff}
+.pb-red:hover{background:var(--accent-dark)}
+.ot-header{
+  display:flex;align-items:flex-end;
+  justify-content:space-between;flex-wrap:wrap;gap:1rem;
+  margin-bottom:1.5rem;
+}
+.ot-header h3{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:1.8rem;letter-spacing:0.03em;color:var(--black);
+}
+.ot-header p{font-size:0.82rem;color:var(--mid);max-width:400px;line-height:1.6}
+.save-badge{
+  position:absolute;top:1.1rem;right:1.1rem;
+  background:rgba(34,197,94,0.08);
+  border:1px solid rgba(34,197,94,0.2);
+  color:#15803d;font-size:0.6rem;font-weight:700;
+  letter-spacing:0.06em;text-transform:uppercase;
+  padding:0.18rem 0.5rem;border-radius:100px;
+}
+
+/* ── WHY ── */
+.why{padding:6rem 3rem;background:var(--accent);color:#fff}
+.why .sh{color:#fff}
+.why-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:2.5rem;margin-top:3.5rem;
+  padding-top:3rem;border-top:1px solid rgba(255,255,255,0.2);
+}
+.wi{border-left:2px solid rgba(255,255,255,0.3);padding-left:1.5rem}
+.wi h3{font-weight:600;font-size:0.95rem;color:#fff;margin-bottom:0.6rem}
+.wi p{font-size:0.82rem;color:rgba(255,255,255,0.62);line-height:1.78}
+
+/* ── CTA BAND ── */
+.cta-band{padding:7rem 3rem;text-align:center;border-top:1px solid var(--border)}
+.cta-band h2{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:clamp(3rem,7vw,7rem);
+  line-height:0.9;letter-spacing:0.02em;color:var(--black);margin-bottom:1.5rem;
+}
+.cta-band h2 .red{color:var(--accent)}
+.cta-band h2 .ghost{-webkit-text-stroke:2px var(--black);color:transparent}
+.cta-band p{
+  font-size:0.95rem;color:var(--mid);
+  max-width:420px;margin:0 auto 2rem;
+  line-height:1.75;font-weight:300;
+}
+
+/* ── ABOUT ── */
+.about-hero{
+  padding:8rem 3rem 5rem;
+  border-bottom:1px solid var(--border);
+  display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:start;
+}
+.about-l h1{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:clamp(3rem,6vw,5.5rem);
+  line-height:0.9;letter-spacing:0.02em;color:var(--black);margin-bottom:1.5rem;
+}
+.about-r p{
+  font-size:0.97rem;color:var(--mid);
+  line-height:1.9;font-weight:300;margin-bottom:1.1rem;
+}
+.about-r p strong{color:var(--ink);font-weight:500}
+.about-vals{
+  padding:5rem 3rem;background:var(--black);
+  display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;
+}
+.av{border-top:2px solid rgba(255,255,255,0.07);padding-top:1.5rem}
+.av h3{font-weight:600;font-size:0.92rem;color:#fff;margin-bottom:0.6rem}
+.av p{font-size:0.82rem;color:rgba(255,255,255,0.32);line-height:1.75}
+
+/* ── SERVICES ── */
+.services-hero{
+  padding:8rem 3rem 5rem;border-bottom:1px solid var(--border);
+}
+.services-hero h1{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:clamp(3rem,6vw,5.5rem);
+  line-height:0.9;letter-spacing:0.02em;color:var(--black);margin-bottom:1.5rem;
+}
+.services-hero p{
+  font-size:1rem;color:var(--mid);max-width:560px;line-height:1.82;font-weight:300;
+}
+.sv-list{padding:5rem 3rem;border-bottom:1px solid var(--border)}
+.sv{
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:5rem;align-items:start;
+  padding:3.5rem 0;border-bottom:1px solid var(--border);
+}
+.sv:last-child{border-bottom:none}
+.sv-num{
+  font-size:0.65rem;font-weight:700;letter-spacing:0.12em;
+  text-transform:uppercase;color:var(--accent);margin-bottom:0.6rem;
+}
+.sv h3{
+  font-family:'Bebas Neue',sans-serif;font-size:2rem;
+  letter-spacing:0.02em;color:var(--black);margin-bottom:1rem;line-height:1.1;
+}
+.sv p{font-size:0.9rem;color:var(--mid);line-height:1.82;font-weight:300}
+.sv p strong{color:var(--ink);font-weight:500}
+.sv-chips{display:flex;flex-wrap:wrap;gap:0.4rem;margin-top:1.2rem}
+.sv-r{
+  background:var(--light);border-radius:var(--radius);
+  padding:2rem;border:1px solid var(--border);
+}
+.sv-ri{
+  display:flex;gap:1rem;padding:0.85rem 0;
+  border-bottom:1px solid var(--border);
+}
+.sv-ri:last-child{border-bottom:none;padding-bottom:0}
+.sv-ri-bar{width:2px;flex-shrink:0;background:var(--accent);border-radius:2px;margin-top:2px}
+.sv-ri h4{font-weight:600;font-size:0.85rem;margin-bottom:0.2rem}
+.sv-ri p{font-size:0.78rem;color:var(--mid);line-height:1.6}
+
+/* ── CONTACT ── */
+.contact-wrap{
+  padding:8rem 3rem 5rem;
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:6rem;align-items:start;min-height:100vh;
+}
+.contact-l h1{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:clamp(2.5rem,5vw,4.5rem);
+  line-height:0.9;letter-spacing:0.02em;color:var(--black);margin-bottom:1.5rem;
+}
+.contact-l p{
+  font-size:0.92rem;color:var(--mid);
+  line-height:1.82;font-weight:300;margin-bottom:1rem;
+}
+.contact-l strong{color:var(--ink);font-weight:500}
+.contact-info{margin-top:2rem;padding-top:2rem;border-top:1px solid var(--border)}
+.ci{display:flex;align-items:center;gap:1rem;margin-bottom:1rem}
+.ci-bar{width:2px;height:28px;background:var(--accent);border-radius:2px;flex-shrink:0}
+.ci p{font-size:0.83rem;color:var(--mid)}
+.ci a{color:var(--ink);font-weight:500;text-decoration:none}
+.ci a:hover{color:var(--accent)}
+.enquiry-form{
+  background:var(--card);border:1.5px solid var(--border);
+  border-radius:20px;padding:2.5rem;
+  position:sticky;top:calc(var(--nav-h) + 1.5rem);
+}
+.form-title{
+  font-family:'Bebas Neue',sans-serif;font-size:1.8rem;
+  letter-spacing:0.03em;color:var(--black);margin-bottom:0.3rem;
+}
+.form-sub{font-size:0.8rem;color:var(--mid);margin-bottom:2rem;line-height:1.55}
+.field{display:flex;flex-direction:column;gap:0.32rem;margin-bottom:1rem}
+.field label{
+  font-size:0.68rem;font-weight:700;letter-spacing:0.08em;
+  text-transform:uppercase;color:var(--ink);
+}
+.field input,.field select,.field textarea{
+  padding:0.78rem 1rem;border:1.5px solid var(--border);
+  border-radius:10px;font-size:0.875rem;
+  font-family:'DM Sans',sans-serif;color:var(--ink);
+  background:#fff;outline:none;
+  transition:border-color 0.2s,box-shadow 0.2s;width:100%;
+}
+.field textarea{resize:vertical;min-height:90px}
+.field input:focus,.field select:focus,.field textarea:focus{
+  border-color:var(--accent);box-shadow:0 0 0 3px rgba(212,58,31,0.07);
+}
+.field input::placeholder,.field textarea::placeholder{color:#c5c0b8}
+.field-row{display:grid;grid-template-columns:1fr 1fr;gap:0.9rem}
+.form-btn{
+  width:100%;padding:0.92rem;background:var(--accent);color:#fff;
+  border:none;border-radius:100px;font-size:0.875rem;font-weight:600;
+  cursor:pointer;font-family:'DM Sans',sans-serif;
+  transition:all 0.2s;margin-top:0.4rem;letter-spacing:0.02em;
+}
+.form-btn:hover{background:var(--accent-dark);transform:translateY(-1px)}
+.form-btn:disabled{opacity:0.6;cursor:not-allowed;transform:none}
+.form-note{font-size:0.7rem;color:var(--mid);text-align:center;margin-top:0.9rem;line-height:1.5}
+.form-success{text-align:center;padding:2.5rem 0;display:none}
+.form-success h3{
+  font-family:'Bebas Neue',sans-serif;font-size:2rem;
+  letter-spacing:0.03em;color:var(--black);margin-bottom:0.5rem;
+}
+.form-success p{font-size:0.875rem;color:var(--mid);line-height:1.6}
+.success-mark{
+  width:52px;height:52px;border-radius:50%;
+  background:rgba(34,197,94,0.1);border:1.5px solid rgba(34,197,94,0.25);
+  display:flex;align-items:center;justify-content:center;
+  margin:0 auto 1.2rem;
+}
+.success-mark svg{width:22px;height:22px;stroke:#16a34a;stroke-width:2.5;fill:none;stroke-linecap:round;stroke-linejoin:round}
+
+/* ── FOOTER ── */
+footer{
+  background:var(--black);padding:2rem 3rem;
+  display:flex;align-items:center;justify-content:space-between;
+  flex-wrap:wrap;gap:1rem;
+}
+.fl{
+  font-family:'Bebas Neue',sans-serif;font-size:1.3rem;
+  letter-spacing:0.06em;color:#fff;
+  display:flex;align-items:baseline;gap:3px;cursor:pointer;
+}
+.fl-dot{width:5px;height:5px;background:var(--accent);border-radius:50%;margin-bottom:-1px}
+.fnav{display:flex;gap:1.5rem;list-style:none}
+.fnav a{
+  font-size:0.75rem;color:rgba(255,255,255,0.25);
+  text-decoration:none;transition:color 0.2s;
+  letter-spacing:0.04em;cursor:pointer;
+}
+.fnav a:hover{color:#fff}
+footer p{font-size:0.7rem;color:rgba(255,255,255,0.16)}
+
+/* ── ANIMATIONS ── */
+.fu{opacity:0;transform:translateY(24px);transition:opacity 0.7s ease,transform 0.7s ease}
+.fu.v{opacity:1;transform:translateY(0)}
+.d1{transition-delay:0.09s}
+.d2{transition-delay:0.18s}
+.d3{transition-delay:0.27s}
+.fd{opacity:0;transform:translateY(12px);transition:opacity 0.5s ease,transform 0.5s ease}
+.fd.v{opacity:1;transform:translateY(0)}
+
+/* ── SPINNER ── */
+.spin{
+  display:inline-block;width:13px;height:13px;
+  border:2px solid rgba(255,255,255,0.3);border-top-color:#fff;
+  border-radius:50%;animation:sp 0.7s linear infinite;
+  vertical-align:middle;margin-right:0.4rem;
+}
+@keyframes sp{to{transform:rotate(360deg)}}
+
+/* ── TOAST ── */
+.toast{
+  position:fixed;bottom:1.5rem;right:1.5rem;
+  background:var(--black);color:#fff;
+  padding:0.85rem 1.3rem;border-radius:12px;
+  font-size:0.8rem;font-weight:500;z-index:999;
+  transform:translateY(8px);opacity:0;
+  transition:all 0.3s;border-left:3px solid var(--accent);pointer-events:none;
+}
+.toast.on{transform:translateY(0);opacity:1}
+
+/* ── RESPONSIVE ── */
+@media(max-width:960px){
+  nav{padding:0 1.5rem}
+  .hero{grid-template-columns:1fr}
+  .hero-r{display:none}
+  .hero-l{padding:5rem 1.5rem 4rem;border-right:none}
+  .statement,.help,.packages,.why,.cta-band{padding:4rem 1.5rem}
+  .how{padding:4rem 1.5rem}
+  .statement{grid-template-columns:1fr;gap:2.5rem}
+  .help-top{grid-template-columns:1fr;gap:1.5rem}
+  .help-grid,.pkg-grid{grid-template-columns:1fr}
+  .how-layout{grid-template-columns:1fr;gap:3rem}
+  .about-hero{grid-template-columns:1fr;padding:7rem 1.5rem 4rem;gap:3rem}
+  .about-vals,.why-grid{grid-template-columns:1fr}
+  .services-hero,.sv-list{padding:5rem 1.5rem}
+  .sv{grid-template-columns:1fr;gap:2rem}
+  .contact-wrap{grid-template-columns:1fr;padding:7rem 1.5rem 4rem;gap:3rem}
+  .field-row{grid-template-columns:1fr}
+  .enquiry-form{position:static}
+  footer{padding:2rem 1.5rem;flex-direction:column;align-items:flex-start;gap:0.8rem}
+  .pkg-intro{grid-template-columns:1fr;gap:2rem}
+  :root{--sidebar:100vw}
+}
+</style>
+</head>
+<body>
+
+<div class="toast" id="toast"></div>
+
+<!-- SIDEBAR OVERLAY -->
+<div class="sidebar-overlay" id="sidebarOverlay" onclick="closeSidebar()"></div>
+
+<!-- SIDEBAR -->
+<aside class="sidebar" id="sidebar">
+  <div class="sidebar-top">
+    <div class="sidebar-logo">ACTA<div class="sidebar-logo-dot"></div></div>
+    <button class="sidebar-close" onclick="closeSidebar()">&#10005;</button>
+  </div>
+  <nav class="sidebar-nav">
+    <div class="sidebar-section-label">Pages</div>
+    <a class="sidebar-link active" id="sl-home" onclick="go('home')">Home</a>
+    <a class="sidebar-link" id="sl-about" onclick="go('about')">About</a>
+    <a class="sidebar-link" id="sl-services" onclick="go('services')">Services</a>
+    <a class="sidebar-link" id="sl-contact" onclick="go('contact')">Contact</a>
+    <div class="sidebar-section-label">On this page</div>
+    <a class="sidebar-link" id="sl-how" onclick="go('home');setTimeout(()=>scrollTo('how-section'),400)">How it works</a>
+    <a class="sidebar-link" id="sl-packages" onclick="go('home');setTimeout(()=>scrollTo('packages-section'),400)">Packages</a>
+  </nav>
+  <div class="sidebar-bottom">
+    <button class="sidebar-cta" onclick="go('contact');closeSidebar()">Send an enquiry</button>
+    <p class="sidebar-email"><a href="mailto:acta.leads@gmail.com">acta.leads@gmail.com</a></p>
+  </div>
+</aside>
+
+<!-- NAV -->
+<nav id="mainNav">
+  <div class="logo" onclick="go('home')">ACTA<div class="logo-dot"></div></div>
+  <div class="nav-right">
+    <button class="nav-enquire" onclick="go('contact')">Get in touch</button>
+    <button class="burger" id="burgerBtn" onclick="toggleSidebar()">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- ===================== HOME ===================== -->
+<div id="page-home" class="page active">
+
+  <section class="hero">
+    <div class="hero-l">
+      <div class="eyebrow fd">Outbound prospecting for marketing agencies</div>
+      <h1 class="fu">We find your<br><span class="ghost">agency's</span><br>next <span class="red">client.</span></h1>
+      <p class="hero-copy fu d1">Marketing agencies are exceptional at growing other companies. Growing their own is a different story. <strong>Acta Leads is your dedicated outbound arm</strong> — we call local businesses on your behalf, qualify them, and hand you an attended meeting with a decision-maker who is ready to talk about marketing.</p>
+      <div class="hero-btns fu d2">
+        <button class="btn btn-red" onclick="go('contact')">Send an enquiry</button>
+        <button class="btn btn-ghost" onclick="go('services')">How it works</button>
+      </div>
+    </div>
+    <div class="hero-r">
+      <div class="hr-label">What we guarantee</div>
+      <div class="deal">
+        <div class="deal-mark"></div>
+        <h3>You pay per attended meeting</h3>
+        <p>Not per lead. Not per call. Not per effort. You pay when a qualified decision-maker shows up and the conversation actually happens.</p>
+      </div>
+      <div class="deal">
+        <div class="deal-mark"></div>
+        <h3>We call as your agency</h3>
+        <p>Every call is made in your name with your pitch. The businesses we speak to never know it is us — they experience your agency from the first word.</p>
+      </div>
+      <div class="deal">
+        <div class="deal-mark"></div>
+        <h3>Hard qualification before you see anyone</h3>
+        <p>Decision-maker confirmed. Genuine need identified. Pricing discussed. All four boxes before we book anything in your calendar.</p>
+      </div>
+      <div class="live">Taking new clients now</div>
+    </div>
+  </section>
+
+  <div class="ticker">
+    <div class="tick-track">
+      <span>Pay Per Attended Meeting</span><span class="sep">&#8212;</span>
+      <span>Built for Marketing Agencies</span><span class="sep">&#8212;</span>
+      <span>Not Leads. Not Calls. Attended Meetings.</span><span class="sep">&#8212;</span>
+      <span>We Call As Your Agency</span><span class="sep">&#8212;</span>
+      <span>Decision-Makers Only</span><span class="sep">&#8212;</span>
+      <span>No Show. No Charge.</span><span class="sep">&#8212;</span>
+      <span>Trades. Construction. Hospitality. Retail.</span><span class="sep">&#8212;</span>
+      <span>Pay Per Attended Meeting</span><span class="sep">&#8212;</span>
+      <span>Built for Marketing Agencies</span><span class="sep">&#8212;</span>
+      <span>Not Leads. Not Calls. Attended Meetings.</span><span class="sep">&#8212;</span>
+      <span>We Call As Your Agency</span><span class="sep">&#8212;</span>
+      <span>Decision-Makers Only</span><span class="sep">&#8212;</span>
+      <span>No Show. No Charge.</span><span class="sep">&#8212;</span>
+      <span>Trades. Construction. Hospitality. Retail.</span><span class="sep">&#8212;</span>
+    </div>
+  </div>
+
+  <!-- STATEMENT -->
+  <section class="statement">
+    <div class="fu">
+      <div class="eyebrow">The real problem</div>
+      <div class="sh">Your agency<br>is brilliant at<br><span class="red">growing</span><br>everyone <span class="it">except</span><br>itself.</div>
+    </div>
+    <div class="stmt-r fu d1">
+      <p>You know how to run campaigns. You know how to get results for clients. Your retention is solid because the work speaks for itself. But consistently bringing in the next client — that takes a completely different skill set, a different mindset, and hours your team simply does not have.</p>
+      <p>Most agencies get by on referrals and the occasional inbound lead. That is not a pipeline. That is hope. And hope does not keep a team busy when things go quiet.</p>
+      <div class="pull">"You should not be paying for effort, activity reports, or promising conversations. You pay when a decision-maker shows up and the meeting actually happens."</div>
+      <p>Acta Leads takes the prospecting function entirely off your plate. We research your ideal clients — the trades businesses, construction companies, hospitality venues, and retailers that need exactly what your agency offers — and we get them into the room with you.</p>
+    </div>
+  </section>
+
+  <!-- WHO WE HELP -->
+  <section class="help">
+    <div class="help-top fu">
+      <div>
+        <div class="eyebrow">Who we serve</div>
+        <div class="sh">Marketing agencies<br>that want <span class="it">more</span><br><span class="red">clients.</span></div>
+      </div>
+      <div class="help-top-r">Acta Leads works exclusively with <strong>marketing and digital agencies</strong>. We prospect the local businesses you want as clients — finding the right decision-makers and getting them on a call with you. You run campaigns. We fill your pipeline.</div>
+    </div>
+    <div class="help-grid">
+      <div class="hc dark fu">
+        <span class="hc-tag">Who we work with</span>
+        <h3>Marketing and digital agencies</h3>
+        <p>Social media agencies, SEO firms, full-service agencies, content studios, PR and comms businesses — if you acquire clients and run campaigns on their behalf, we find those clients for you.</p>
+        <div class="hc-chips">
+          <span class="chip">Social media agencies</span>
+          <span class="chip">SEO and SEM firms</span>
+          <span class="chip">Full-service agencies</span>
+          <span class="chip">Content studios</span>
+          <span class="chip">PR and comms</span>
+        </div>
+      </div>
+      <div class="hc fu d1">
+        <span class="hc-tag">Who we prospect for you</span>
+        <h3>Trades and construction</h3>
+        <p>Builders, electricians, plumbers, fit-out companies — local trades businesses that need a strong digital presence but are too busy doing the work to think about marketing. These are high-value, long-term clients for agencies.</p>
+        <div class="hc-chips">
+          <span class="chip">Builders</span>
+          <span class="chip">Electricians</span>
+          <span class="chip">Plumbers</span>
+          <span class="chip">Fit-out companies</span>
+          <span class="chip">Commercial trades</span>
+        </div>
+      </div>
+      <div class="hc fu d2">
+        <span class="hc-tag">Who we prospect for you</span>
+        <h3>Hospitality, retail and services</h3>
+        <p>Restaurants, cafes, retail stores, gyms, salons, local service businesses — all needing consistent marketing to compete locally. We find the ones that are the right fit for what your agency does.</p>
+        <div class="hc-chips">
+          <span class="chip">Restaurants and cafes</span>
+          <span class="chip">Gyms and fitness</span>
+          <span class="chip">Retail stores</span>
+          <span class="chip">Local services</span>
+        </div>
+      </div>
+    </div>
+    <div class="help-note fu">
+      <p><strong>Not sure if we are a fit for your agency?</strong> Send us an enquiry and we will come back to you straight — no pitch, just an honest answer.</p>
+      <a onclick="go('contact')">Get in touch</a>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="how" id="how-section">
+    <div class="how-intro fu">
+      <div class="eyebrow">How it works</div>
+      <div class="sh" style="color:#fff">A straightforward<br>process. <span style="color:var(--accent)">Attended<br>meetings.</span></div>
+    </div>
+    <div class="how-layout">
+      <div>
+        <div class="step fu">
+          <div class="step-n">01</div>
+          <div>
+            <h3>You brief us — we become you</h3>
+            <p>We spend time learning your agency. Your offer, your pricing, your ideal client, your tone. Every call we make is in your name. The businesses we speak to experience your agency from the very first conversation.</p>
+          </div>
+        </div>
+        <div class="step fu">
+          <div class="step-n">02</div>
+          <div>
+            <h3>We build your prospect list</h3>
+            <p>We research and build a targeted list of local businesses that match exactly what your agency wants as a client. Every call is deliberate. We do not dial randomly and hope something sticks.</p>
+          </div>
+        </div>
+        <div class="step fu">
+          <div class="step-n">03</div>
+          <div>
+            <h3>We make the calls</h3>
+            <p>Our team dials daily, pushes past gatekeepers, handles objections and navigates to the person who actually makes decisions. We are persistent without being pushy. Most opportunities are lost after the second attempt. We keep going.</p>
+          </div>
+        </div>
+        <div class="step fu">
+          <div class="step-n">04</div>
+          <div>
+            <h3>We qualify before anyone reaches your calendar</h3>
+            <p>Decision-maker on the call. Genuine need for marketing services identified. Your pricing range discussed and accepted. Commitment to the meeting time confirmed. All four before we book anything.</p>
+          </div>
+        </div>
+        <div class="step fu">
+          <div class="step-n">05</div>
+          <div>
+            <h3>An attended meeting lands in your calendar</h3>
+            <p>You receive a full briefing note — who they are, what they said, what they need, what they can spend. You walk in knowing exactly who you are talking to. We invoice once the meeting takes place. Not before.</p>
+          </div>
+        </div>
+      </div>
+      <div class="how-r fu d1">
+        <div class="q-card">
+          <div class="q-lbl">Our standard</div>
+          <h4>No show means no charge</h4>
+          <p>If a business does not attend the meeting we booked, we do not invoice. We rebook it. Your money only leaves your account when the meeting actually happened.</p>
+        </div>
+        <div class="q-card">
+          <div class="q-lbl">Our standard</div>
+          <h4>The decision-maker, confirmed</h4>
+          <p>We only book meetings with the person who can say yes — the owner, director, or the person responsible for marketing spend. No middle managers or personal assistants.</p>
+        </div>
+        <div class="diff">
+          <div class="diff-lbl">What you are and are not paying for</div>
+          <div class="diff-row">
+            <div class="diff-mk no">&#8212;</div>
+            <p>Not a lead list — a name and a phone number is not a meeting</p>
+          </div>
+          <div class="diff-row">
+            <div class="diff-mk no">&#8212;</div>
+            <p>Not a booked call that never shows — if they ghost, you do not pay</p>
+          </div>
+          <div class="diff-row">
+            <div class="diff-mk no">&#8212;</div>
+            <p>Not effort or activity — dials made and emails sent do not grow your agency</p>
+          </div>
+          <div class="diff-row">
+            <div class="diff-mk yes">+</div>
+            <p><strong>An attended meeting</strong> — a real person, in the conversation, ready to talk about working with your agency</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PACKAGES -->
+  <section class="packages" id="packages-section">
+    <div class="pkg-intro fu">
+      <div>
+        <div class="eyebrow">Packages</div>
+        <div class="sh">Choose how<br>many meetings<br>you <span class="it">need.</span></div>
+      </div>
+      <div class="pkg-intro-r">
+        <p>Every package is built around one thing: <strong>attended, qualified meetings</strong> with local business owners and decision-makers who are open to marketing services. Choose how many per month, or start with a one-time package to see what we can do. Enquire for exact pricing.</p>
+      </div>
+    </div>
+
+    <div class="pkg-row-label">Monthly packages</div>
+    <div class="pkg-grid">
+      <div class="pk fu">
+        <div class="pk-tier">Starter</div>
+        <div class="pk-n">4<sub>meetings / mo</sub></div>
+        <div class="pk-desc">A steady flow of new conversations each month. Good for agencies building their pipeline from scratch or testing what outbound can do for them.</div>
+        <div class="pk-div"></div>
+        <ul class="pk-list">
+          <li>4 attended qualified meetings per month</li>
+          <li>Targeted prospect list research included</li>
+          <li>Full briefing note before every meeting</li>
+          <li>No-show rebooked at no cost</li>
+          <li>Weekly activity report</li>
+        </ul>
+        <div class="pk-enquire" onclick="go('contact')"><p>Enquire for pricing</p><span>Send an enquiry</span></div>
+        <button class="pkbtn pb-dark" onclick="go('contact')">Get started</button>
+      </div>
+      <div class="pk feat fu d1">
+        <div class="pk-tier">Growth — most popular</div>
+        <div class="pk-n">8<sub>meetings / mo</sub></div>
+        <div class="pk-desc">The right volume to build genuine momentum. Enough meetings each month to keep your team busy with real opportunities without overwhelming your close process.</div>
+        <div class="pk-div"></div>
+        <ul class="pk-list">
+          <li>8 attended qualified meetings per month</li>
+          <li>Volume rate applied</li>
+          <li>Dedicated account manager</li>
+          <li>Fortnightly strategy call</li>
+          <li>Priority turnaround</li>
+        </ul>
+        <div class="pk-enquire" onclick="go('contact')"><p>Enquire for pricing</p><span>Send an enquiry</span></div>
+        <button class="pkbtn pb-red" onclick="go('contact')">Get started</button>
+      </div>
+      <div class="pk fu d2">
+        <div class="pk-tier">Domination</div>
+        <div class="pk-n">12<sub>meetings / mo</sub></div>
+        <div class="pk-desc">For agencies that are serious about consistent, aggressive pipeline growth. Maximum volume, best rate, and full visibility every week on where things stand.</div>
+        <div class="pk-div"></div>
+        <ul class="pk-list">
+          <li>12 attended qualified meetings per month</li>
+          <li>Best per-meeting rate</li>
+          <li>Weekly strategy and reporting sessions</li>
+          <li>Custom prospect list rebuilt monthly</li>
+          <li>Multi-sector prospecting available</li>
+        </ul>
+        <div class="pk-enquire" onclick="go('contact')"><p>Enquire for pricing</p><span>Send an enquiry</span></div>
+        <button class="pkbtn pb-dark" onclick="go('contact')">Get started</button>
+      </div>
+    </div>
+
+    <div class="ot-header fu">
+      <h3>One-time packages</h3>
+      <p>No ongoing commitment. Pay once and we deliver within 30 days. Lower per-meeting cost than the monthly equivalent. A good way to see what we can do before committing to a regular volume.</p>
+    </div>
+    <div class="pkg-grid">
+      <div class="pk fu" style="position:relative">
+        <div class="save-badge">Lower per-meeting cost</div>
+        <div class="pk-tier">One-time — Starter</div>
+        <div class="pk-n">4<sub>meetings</sub></div>
+        <div class="pk-desc">Four attended meetings delivered within 30 days. Pay once, no ongoing commitment.</div>
+        <div class="pk-div"></div>
+        <ul class="pk-list"><li>Delivered within 30 days</li><li>Prospect list included</li><li>No-show protection</li><li>Full briefing notes included</li></ul>
+        <div class="pk-enquire" onclick="go('contact')"><p>Enquire for pricing</p><span>Send an enquiry</span></div>
+        <button class="pkbtn pb-dark" onclick="go('contact')">Enquire</button>
+      </div>
+      <div class="pk fu d1" style="position:relative">
+        <div class="save-badge">Best one-time value</div>
+        <div class="pk-tier">One-time — Growth</div>
+        <div class="pk-n">8<sub>meetings</sub></div>
+        <div class="pk-desc">Eight attended meetings within 30 days. The best per-meeting cost in the one-time range.</div>
+        <div class="pk-div"></div>
+        <ul class="pk-list"><li>Delivered within 30 days</li><li>Dedicated team assigned</li><li>Prospect list included</li><li>No-show protection</li></ul>
+        <div class="pk-enquire" onclick="go('contact')"><p>Enquire for pricing</p><span>Send an enquiry</span></div>
+        <button class="pkbtn pb-dark" onclick="go('contact')">Enquire</button>
+      </div>
+      <div class="pk fu d2" style="position:relative">
+        <div class="save-badge">Maximum impact</div>
+        <div class="pk-tier">One-time — Domination</div>
+        <div class="pk-n">12<sub>meetings</sub></div>
+        <div class="pk-desc">Twelve attended meetings in 30 days. The full pipeline hit with no ongoing obligation.</div>
+        <div class="pk-div"></div>
+        <ul class="pk-list"><li>Delivered within 30 days</li><li>Senior team assigned</li><li>Weekly progress updates</li><li>Prospect list included</li></ul>
+        <div class="pk-enquire" onclick="go('contact')"><p>Enquire for pricing</p><span>Send an enquiry</span></div>
+        <button class="pkbtn pb-dark" onclick="go('contact')">Enquire</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY -->
+  <section class="why">
+    <div class="fu">
+      <div class="eyebrow" style="color:rgba(255,255,255,0.35)">Why Acta</div>
+      <div class="sh" style="color:#fff;font-size:clamp(2.2rem,4vw,3.5rem)">We get paid when<br>you get results.</div>
+    </div>
+    <div class="why-grid">
+      <div class="wi fu">
+        <h3>You pay for attended meetings — nothing else</h3>
+        <p>You are not paying for leads, calls logged, or hours worked. You pay when a qualified decision-maker attends the meeting we booked. If they do not show, we rebook at no cost to you.</p>
+      </div>
+      <div class="wi fu d1">
+        <h3>We become your agency on every call</h3>
+        <p>Every call is made in your agency's name, with your pitch and your positioning. We study you before we start. Your prospects will never know it is us — they experience you from the first conversation.</p>
+      </div>
+      <div class="wi fu d2">
+        <h3>You focus on the work — we fill the calendar</h3>
+        <p>Your job is to deliver exceptional results for the clients you have. Ours is to bring you the next one. Stop splitting your focus between client work and prospecting. We handle the bit you keep putting off.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-band">
+    <h2 class="fu">Stop <span class="ghost">waiting</span><br>for <span class="red">referrals.</span></h2>
+    <p class="fu d1">Send us an enquiry. We will come back within 24 hours with an honest answer on whether we are the right fit for your agency and what we would recommend.</p>
+    <button class="btn btn-red fu d2" onclick="go('contact')">Send an enquiry</button>
+  </section>
+
+</div>
+
+<!-- ===================== ABOUT ===================== -->
+<div id="page-about" class="page">
+  <section class="about-hero">
+    <div class="about-l fu">
+      <div class="eyebrow">About</div>
+      <h1>We do the prospecting<br>your agency<br>keeps putting off.</h1>
+    </div>
+    <div class="about-r fu d1">
+      <p>Acta Leads was built around a single observation: marketing agencies are among the most capable businesses at growing other companies — and consistently among the worst at filling their own pipeline.</p>
+      <p>It is not a skill problem. You know what good marketing looks like. It is a bandwidth and appetite problem. Cold outreach is hard, repetitive, and demoralising. It pulls your team away from the client work you are actually paid to do and the results you are proud of.</p>
+      <div class="pull">"The best agency in the room wins nothing if nobody brings them a business to work with."</div>
+      <p>Acta Leads exists to be the prospecting arm your agency does not have. We handle everything before the meeting — the research, the calls, the objections, the qualification. <strong>You handle everything in it.</strong></p>
+      <p>We focus on prospecting local businesses for marketing agencies. Trades businesses, construction companies, hospitality venues, retailers — the kinds of clients that need marketing, that have money to spend, and where a single direct phone call to the right person genuinely changes the outcome.</p>
+      <p>We work on a pay-per-attended-meeting basis. You do not pay for effort or activity. You pay when a real decision-maker turns up to a real conversation. That accountability keeps us sharp and keeps our incentives completely aligned with yours.</p>
+    </div>
+  </section>
+  <div class="about-vals">
+    <div class="av fu">
+      <h3>Results only</h3>
+      <p>We do not invoice for activity, dials made, or strategy sessions. You pay when a decision-maker attends the meeting we booked. That is the only metric that matters to us.</p>
+    </div>
+    <div class="av fu d1">
+      <h3>We represent your agency</h3>
+      <p>Every call is your call. We study your agency, your pitch, and your positioning before we start. Your prospects experience you from the very first conversation — before you have spoken to them yourself.</p>
+    </div>
+    <div class="av fu d2">
+      <h3>Local business focus</h3>
+      <p>We specialise in prospecting local businesses for agencies. The kinds of clients in your own city or region where relationships move fast and the right conversation at the right time wins the business.</p>
+    </div>
+  </div>
+  <section class="cta-band">
+    <h2 class="fu">Sounds right<br>for your <span class="red">agency?</span></h2>
+    <p class="fu d1">Send us a quick enquiry and we will come back to you within 24 hours.</p>
+    <button class="btn btn-red fu d2" onclick="go('contact')">Get in touch</button>
+  </section>
+</div>
+
+<!-- ===================== SERVICES ===================== -->
+<div id="page-services" class="page">
+  <section class="services-hero fu">
+    <div class="eyebrow">Services</div>
+    <h1>One job.<br>Done properly.</h1>
+    <p>We prospect local businesses on behalf of marketing agencies, qualify them, and book attended meetings. That is the entire service. We do not do content, ads, or strategy. We pick up the phone and find your agency clients to work with.</p>
+  </section>
+  <section class="sv-list">
+    <div class="sv fu">
+      <div>
+        <div class="sv-num">01 / Core service</div>
+        <h3>Monthly prospecting packages</h3>
+        <p>Choose 4, 8, or 12 attended meetings per month. We handle all prospecting, calling, and qualification. Every meeting in your calendar comes with a full briefing note. <strong>If the meeting does not happen, you do not pay for it.</strong></p>
+        <div class="sv-chips">
+          <span class="chip">4 meetings / month</span>
+          <span class="chip">8 meetings / month</span>
+          <span class="chip">12 meetings / month</span>
+          <span class="chip">Consistent monthly pipeline</span>
+        </div>
+      </div>
+      <div class="sv-r">
+        <div class="sv-ri"><div class="sv-ri-bar"></div><div><h4>Targeted prospect research</h4><p>We build a tailored list of local businesses that match your agency's ideal client before we make a single call.</p></div></div>
+        <div class="sv-ri"><div class="sv-ri-bar"></div><div><h4>Outbound calling in your agency's name</h4><p>Every call is made representing your agency. Prospects experience your brand from the first touchpoint.</p></div></div>
+        <div class="sv-ri"><div class="sv-ri-bar"></div><div><h4>Hard qualification on every prospect</h4><p>Decision-maker confirmed. Genuine need identified. Pricing discussed. Attendance committed to.</p></div></div>
+        <div class="sv-ri"><div class="sv-ri-bar"></div><div><h4>Full briefing note before every meeting</h4><p>You receive a summary of who they are, what was said, and what they are looking for before you speak to them.</p></div></div>
+      </div>
+    </div>
+    <div class="sv fu">
+      <div>
+        <div class="sv-num">02 / No commitment option</div>
+        <h3>One-time packages</h3>
+        <p>Not ready to commit to a monthly volume? One-time packages let you see what we can do with no strings attached. <strong>Lower per-meeting cost than the monthly equivalent</strong>, delivered within 30 days. If the results speak for themselves, moving to monthly is straightforward.</p>
+        <div class="sv-chips">
+          <span class="chip">4 meetings</span>
+          <span class="chip">8 meetings</span>
+          <span class="chip">12 meetings</span>
+          <span class="chip">Delivered in 30 days</span>
+        </div>
+      </div>
+      <div class="sv-r">
+        <div class="sv-ri"><div class="sv-ri-bar"></div><div><h4>Lower per-meeting cost</h4><p>One-time packages carry a lower per-meeting rate than the monthly equivalent. Pay once and keep every result.</p></div></div>
+        <div class="sv-ri"><div class="sv-ri-bar"></div><div><h4>Delivered within 30 days</h4><p>All meetings completed within one calendar month from the day we start.</p></div></div>
+        <div class="sv-ri"><div class="sv-ri-bar"></div><div><h4>Same qualification standard</h4><p>The same four-point qualification check applies. No-show protection included. Full briefing notes provided.</p></div></div>
+      </div>
+    </div>
+    <div class="sv fu">
+      <div>
+        <div class="sv-num">03 / The standard</div>
+        <h3>What qualifies as an attended meeting</h3>
+        <p>Before any meeting reaches your calendar, we confirm four things. If any one of them is not true, the meeting does not count — and you do not pay for it.</p>
+      </div>
+      <div class="sv-r">
+        <div class="sv-ri"><div class="sv-ri-bar"></div><div><h4>Decision-maker confirmed</h4><p>The person attending can actually say yes — owner, director, or whoever controls the marketing budget.</p></div></div>
+        <div class="sv-ri"><div class="sv-ri-bar"></div><div><h4>Genuine need for marketing services</h4><p>They have a specific gap or goal that your agency can address. Not vague curiosity — a real business problem.</p></div></div>
+        <div class="sv-ri"><div class="sv-ri-bar"></div><div><h4>Pricing range discussed and accepted</h4><p>They know approximately what your agency charges and are still interested. No sticker shock in the meeting.</p></div></div>
+        <div class="sv-ri"><div class="sv-ri-bar"></div><div><h4>They attended</h4><p>The meeting took place. That is when we invoice. Not when it is booked. When it happens.</p></div></div>
+      </div>
+    </div>
+  </section>
+  <section class="cta-band">
+    <h2 class="fu">Ready to fill<br>your <span class="red">calendar?</span></h2>
+    <p class="fu d1">Send an enquiry and we will reply within 24 hours.</p>
+    <button class="btn btn-red fu d2" onclick="go('contact')">Send an enquiry</button>
+  </section>
+</div>
+
+<!-- ===================== CONTACT ===================== -->
+<div id="page-contact" class="page">
+  <div class="contact-wrap">
+    <div class="contact-l fu">
+      <div class="eyebrow">Get in touch</div>
+      <h1>Tell us about your agency.</h1>
+      <p>Fill in the form and we will come back to you within 24 hours — usually the same day. We will give you a straight answer on whether we are the right fit, what we would recommend, and what it costs.</p>
+      <p><strong>We work with marketing and digital agencies</strong> that need a consistent flow of new local business clients to work with. If that is you, we should talk.</p>
+      <p>No pressure, no lengthy pitch. Just a direct conversation about whether Acta makes sense for where your agency is right now.</p>
+      <div class="contact-info">
+        <div class="ci">
+          <div class="ci-bar"></div>
+          <p>Email <a href="mailto:acta.leads@gmail.com">acta.leads@gmail.com</a> — we reply within 24 hours</p>
+        </div>
+        <div class="ci">
+          <div class="ci-bar"></div>
+          <p>Australia-based, working with agencies across the country</p>
+        </div>
+        <div class="ci">
+          <div class="ci-bar"></div>
+          <p>We will not share your details with anyone</p>
+        </div>
+      </div>
+    </div>
+    <div class="fu d1">
+      <div class="enquiry-form">
+        <div id="formBody">
+          <div class="form-title">Send an enquiry</div>
+          <p class="form-sub">We will reply with pricing and a recommendation within 24 hours.</p>
+          <div class="field-row">
+            <div class="field"><label>First name</label><input type="text" id="fn" placeholder="James"></div>
+            <div class="field"><label>Last name</label><input type="text" id="ln" placeholder="Carter"></div>
+          </div>
+          <div class="field"><label>Agency name</label><input type="text" id="biz" placeholder="Carter Digital"></div>
+          <div class="field">
+            <label>Agency type</label>
+            <select id="industry">
+              <option value="">Select your agency type...</option>
+              <option>Social media agency</option>
+              <option>SEO or SEM agency</option>
+              <option>Full-service marketing agency</option>
+              <option>Content and creative studio</option>
+              <option>PR and communications agency</option>
+              <option>Performance and paid media agency</option>
+              <option>Web design and development agency</option>
+              <option>Other digital agency</option>
+            </select>
+          </div>
+          <div class="field"><label>Your email</label><input type="email" id="em" placeholder="james@carterd igital.com.au"></div>
+          <div class="field"><label>Your phone number</label><input type="tel" id="ph" placeholder="04XX XXX XXX"></div>
+          <div class="field">
+            <label>Which package interests you?</label>
+            <select id="pkg">
+              <option value="">Not sure yet — happy to be advised</option>
+              <option>Monthly Starter — 4 meetings per month</option>
+              <option>Monthly Growth — 8 meetings per month</option>
+              <option>Monthly Domination — 12 meetings per month</option>
+              <option>One-time Starter — 4 meetings</option>
+              <option>One-time Growth — 8 meetings</option>
+              <option>One-time Domination — 12 meetings</option>
+            </select>
+          </div>
+          <div class="field"><label>Anything else?</label><textarea id="msg" placeholder="Tell us a bit about your agency, what kinds of clients you want more of, or anything else that would help us understand what you need..."></textarea></div>
+          <button class="form-btn" id="formBtn" onclick="submitForm()">Send enquiry</button>
+          <p class="form-note">Goes straight to acta.leads@gmail.com — we do not share your details with anyone.</p>
+        </div>
+        <div class="form-success" id="formSuccess">
+          <div class="success-mark">
+            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+          </div>
+          <h3>Enquiry sent.</h3>
+          <p>We will be in touch within 24 hours at <strong id="successEmail"></strong>. Usually same day.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="fl" onclick="go('home')">ACTA<div class="fl-dot"></div></div>
+  <ul class="fnav">
+    <li><a onclick="go('home')">Home</a></li>
+    <li><a onclick="go('about')">About</a></li>
+    <li><a onclick="go('services')">Services</a></li>
+    <li><a onclick="go('contact')">Contact</a></li>
+  </ul>
+  <p>2026 Acta Leads &nbsp;·&nbsp; acta.leads@gmail.com</p>
+</footer>
+
+<script>
+// ── SIDEBAR ──
+function toggleSidebar(){
+  const s=document.getElementById('sidebar');
+  const o=document.getElementById('sidebarOverlay');
+  const b=document.getElementById('burgerBtn');
+  const open=s.classList.contains('active');
+  s.classList.toggle('active');
+  o.classList.toggle('active');
+  b.classList.toggle('active');
+  document.body.classList.toggle('sidebar-open',!open);
+}
+function closeSidebar(){
+  document.getElementById('sidebar').classList.remove('active');
+  document.getElementById('sidebarOverlay').classList.remove('active');
+  document.getElementById('burgerBtn').classList.remove('active');
+  document.body.classList.remove('sidebar-open');
+}
+
+// ── NAV SCROLL ──
+window.addEventListener('scroll',()=>{
+  document.getElementById('mainNav').classList.toggle('scrolled',window.scrollY>20);
+});
+
+// ── PAGE ROUTING ──
+function go(id){
+  closeSidebar();
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  document.getElementById('page-'+id).classList.add('active');
+  window.scrollTo({top:0,behavior:'smooth'});
+  // update sidebar active state
+  document.querySelectorAll('.sidebar-link').forEach(l=>l.classList.remove('active'));
+  const sl=document.getElementById('sl-'+id);
+  if(sl)sl.classList.add('active');
+  // trigger animations
+  setTimeout(()=>{
+    document.querySelectorAll('#page-'+id+' .fu:not(.v), #page-'+id+' .fd:not(.v)')
+      .forEach(el=>io.observe(el));
+  },60);
+}
+function scrollTo(id){
+  const el=document.getElementById(id);
+  if(el)el.scrollIntoView({behavior:'smooth'});
+}
+
+// ── INTERSECTION OBSERVER ──
+const io=new IntersectionObserver(e=>{
+  e.forEach(x=>{
+    if(x.isIntersecting){x.target.classList.add('v');io.unobserve(x.target)}
+  });
+},{threshold:0.07});
+document.querySelectorAll('.fu,.fd').forEach(el=>io.observe(el));
+
+// ── TOAST ──
+function showToast(msg){
+  const t=document.getElementById('toast');
+  t.textContent=msg;t.classList.add('on');
+  setTimeout(()=>t.classList.remove('on'),3000);
+}
+
+// ── FORM ──
+function submitForm(){
+  const fn=document.getElementById('fn').value.trim();
+  const ln=document.getElementById('ln').value.trim();
+  const biz=document.getElementById('biz').value.trim();
+  const ind=document.getElementById('industry').value;
+  const em=document.getElementById('em').value.trim();
+  const ph=document.getElementById('ph').value.trim();
+  const pkg=document.getElementById('pkg').value;
+  const msg=document.getElementById('msg').value.trim();
+
+  if(!fn||!ln){showToast('Please enter your full name');return}
+  if(!biz){showToast('Please enter your agency name');return}
+  if(!ind){showToast('Please select your agency type');return}
+  if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(em)){showToast('Please enter a valid email address');return}
+  if(ph.replace(/\s/g,'').length<8){showToast('Please enter your phone number');return}
+
+  const btn=document.getElementById('formBtn');
+  btn.disabled=true;
+  btn.innerHTML='<span class="spin"></span>Sending...';
+
+  const body=
+    `New enquiry from Acta Leads website%0A%0A`+
+    `Name: ${fn} ${ln}%0A`+
+    `Agency: ${biz}%0A`+
+    `Agency type: ${ind}%0A`+
+    `Email: ${em}%0A`+
+    `Phone: ${ph}%0A`+
+    `Package interest: ${pkg||'Not specified'}%0A`+
+    `Message: ${msg||'None provided'}%0A%0A`+
+    `Submitted: ${new Date().toLocaleString('en-AU')}`;
+
+  const leads=JSON.parse(localStorage.getItem('acta_enquiries')||'[]');
+  leads.push({fn,ln,biz,ind,em,ph,pkg,msg,ts:new Date().toISOString()});
+  localStorage.setItem('acta_enquiries',JSON.stringify(leads));
+
+  setTimeout(()=>{
+    window.location.href=
+      `mailto:acta.leads@gmail.com?subject=New agency enquiry — ${fn} ${ln}, ${biz}&body=${body}`;
+    document.getElementById('formBody').style.display='none';
+    document.getElementById('formSuccess').style.display='block';
+    document.getElementById('successEmail').textContent=em;
+    btn.disabled=false;
+    btn.innerHTML='Send enquiry';
+  },800);
+}
+
+// Admin helper
+window.getEnquiries=()=>{
+  const d=JSON.parse(localStorage.getItem('acta_enquiries')||'[]');
+  console.table(d);return d;
+};
+</script>
+</body>
+</html>
